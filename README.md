@@ -1,0 +1,2 @@
+# word-corners-tests
+ school
