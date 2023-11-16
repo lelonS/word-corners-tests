@@ -1,0 +1,31 @@
+{
+  "name": "word-corners-tests",
+  "version": "1.0.0",
+  "description": "school",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run --browser chrome",
+    "test-ui": "cypress open"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/step_definitions/**/*.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lelonS/word-corners-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lelonS/word-corners-tests/issues"
+  },
+  "homepage": "https://github.com/lelonS/word-corners-tests#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.5.1"
+  }
+}
