@@ -21,7 +21,7 @@ Given('the page has loaded', () => {
 
   // Get window.monkey
   cy.window().then((win) => {
-    win.monkey.randomChar = async () => { return 'Z' };
+    win.monkey.randomChar = async () => { return 'MONKEYpatch' };
   });
 
   cy.get('.splash', { timeout: 20000 }).should('not.exist');
