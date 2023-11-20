@@ -9,6 +9,7 @@ Given('I am on the game page', () => {
 });
 
 Given('the page has loaded', () => {
+  cy.wait(1000);
   cy.get('.splash').should('not.exist');
 });
 
