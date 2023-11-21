@@ -17,9 +17,9 @@ Given('the page has loaded', () => {
   cy.get('.splash').should('not.exist');
 });
 
-When('I place two letters in a row in the {string} box', (boxClass) => {
+When('I place {int} letters in a row in the {string} box', (num, boxClass) => {
   const classes = boxClass.split(' ');
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < num; i++) {
     cy.get(`.middle`).children().should('have.length', 3);
     cy.get(`.middle`).children().eq(1).then((el) => {
       boxes[boxClass].push(el.text());

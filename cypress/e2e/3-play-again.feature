@@ -4,7 +4,7 @@ Feature: Play again button starts a correct game
     Given the dictionary requests are intercepted and use two-letter-words.txt
     And I am on the game page
     And the page has loaded
-    When I place two letters in a row in the "top left" box
+    When I place 2 letters in a row in the "top left" box
     And I claim points in one box
     And I place 3 letters in each box
 
