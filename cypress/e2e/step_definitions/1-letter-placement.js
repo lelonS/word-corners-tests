@@ -5,6 +5,10 @@ let boxes = { 'top left': [], 'bottom left': [], 'top right': [], 'bottom right'
 
 Given('I am on the game page', () => {
   boxes = { 'top left': [], 'bottom left': [], 'top right': [], 'bottom right': [] };
+
+  cy.intercept('GET', '/workers/dictionaries/svenska-ord.txt', { fixture: 'two-letter-words.txt' });
+  cy.intercept('GET', '/workers/dictionaries/svenska-pronomen.txt', { fixture: 'empty.txt' });
+
   cy.visit('/game');
 });
 
