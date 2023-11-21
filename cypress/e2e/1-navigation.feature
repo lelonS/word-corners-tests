@@ -6,7 +6,7 @@ Feature: Navigating the website
   Scenario: Go to the game page through the menu
     Given I am on the "/" page
     When I click on the "Spela" button via the menu
-    Then I should be on the "Start" page
+    Then I should be on the "Spela" page
 
   Scenario: Go to the game page through the play button
     Given I am on the "/" page

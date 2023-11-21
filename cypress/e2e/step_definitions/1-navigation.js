@@ -8,6 +8,10 @@ When('I click on the {string} button via the menu', (buttonText) => {
   cy.get('.menu').contains(buttonText).click();
 });
 
+When('I click on {string}', (buttonClass) => {
+  cy.get(`.${buttonClass}`).click();
+});
+
 Then('I should be on the {string} page', (buttonText) => {
-  cy.get('menu').find('.active').should('contain', buttonText);
+  cy.get('.menu').find('.active').should('contain', buttonText);
 });
