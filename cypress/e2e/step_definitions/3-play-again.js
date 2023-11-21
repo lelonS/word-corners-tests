@@ -7,7 +7,9 @@ When('I place {int} letters in each box', (count) => {
   for (let boxClass of boxClasses) {
     // Place 3 letters in each box
     for (let i = 0; i < count; i++) {
+      // Wait for a letter to be given
       cy.get(`.middle`).children().should('have.length', 3);
+      // Place the letter
       cy.get(boxClass).click();
     }
   }

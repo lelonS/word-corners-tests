@@ -9,7 +9,3 @@ Feature: Play again button starts a correct game
     When I place 3 letters in each box
     And I click the play again button
     Then the game should reset
-
-
-  Scenario: Playing without timer
-    Given I am on the game page
