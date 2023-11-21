@@ -23,6 +23,10 @@ When('I click the play again button', () => {
   cy.get('.play-again-btn').click();
 });
 
+When('I click the menu button', () => {
+  cy.get('.start-page-btn').click();
+});
+
 Then('the game should reset', () => {
   cy.get('.score').should('contain', 'POÄNG: 0');
   cy.get('.time>span').should('not.contain', '0');
