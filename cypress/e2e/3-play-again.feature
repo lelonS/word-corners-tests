@@ -1,7 +1,7 @@
 Feature: Play again button starts a correct game
 
   Background: Use two-letter-combos as dictionary
-    Given the dictrionary reqests are intercepted and use two-letter-words.txt
+    Given the dictionary requests are intercepted and use two-letter-words.txt
 
   Scenario: Playing with timer
     Given I am on the game page

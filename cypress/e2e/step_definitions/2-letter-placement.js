@@ -2,7 +2,7 @@ const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
 
 let boxes = { 'top left': [], 'bottom left': [], 'top right': [], 'bottom right': [] };
 
-Given('the dictrionary reqests are intercepted and use two-letter-words.txt', () => {
+Given('the dictionary requests are intercepted and use two-letter-words.txt', () => {
   cy.intercept('GET', '/workers/dictionaries/svenska-ord.txt', { fixture: 'two-letter-words.txt' });
   cy.intercept('GET', '/workers/dictionaries/svenska-pronomen.txt', { fixture: 'empty.txt' });
 });
