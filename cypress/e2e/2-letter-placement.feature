@@ -1,5 +1,8 @@
 Feature: Letters are placed in the correct order
 
+  Background: Use two-letter-combos as dictionary
+    Given the dictrionary reqests are intercepted and use two-letter-words.txt
+
   Scenario: Placing letters on the left side
     Given I am on the game page
     And the page has loaded
