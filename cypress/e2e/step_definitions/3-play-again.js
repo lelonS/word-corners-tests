@@ -1,6 +1,10 @@
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
 
 
+When('I claim points in one box', () => {
+  cy.get('.valid > .take-points').click();
+});
+
 When('I place {int} letters in each box', (count) => {
   const boxClasses = ['.top.left', '.bottom.left', '.top.right', '.bottom.right'];
 
@@ -16,11 +20,16 @@ When('I place {int} letters in each box', (count) => {
 });
 
 When('I click the play again button', () => {
-  // Stuff
+  cy.get('.play-again-btn').click();
 });
 
 Then('the game should reset', () => {
-  // Stuff
+  cy.get('.score').should('contain', 'POÄNG: 0');
+  cy.get('.time>span').should('not.contain', '0');
+  cy.get('.restart-buttons').should('not.exist');
+  cy.get('div').contains('GAME OVER').should('not.exist');
+  cy.get('.invalid').should('not.exist');
+  cy.get('invalid-by-timeout').should('not.exist');
 });
 
 

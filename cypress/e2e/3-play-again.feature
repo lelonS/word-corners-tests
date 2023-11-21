@@ -6,6 +6,8 @@ Feature: Play again button starts a correct game
   Scenario: Playing with timer
     Given I am on the game page
     And the page has loaded
-    When I place 3 letters in each box
+    When I place two letters in a row in the "top left" box
+    And I claim points in one box
+    And I place 3 letters in each box
     And I click the play again button
     Then the game should reset
