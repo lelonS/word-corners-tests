@@ -7,7 +7,7 @@ Feature: Dictionary search
     When I enter "a" in the searchbar
     Then there should be 29 results
     And the first result should be "aa"
-    And the result should not change from "a"
+    And the input word should not change from "a"
 
 
   Scenario: Using the full dictionary
@@ -16,4 +16,4 @@ Feature: Dictionary search
     When I enter "realisationsvinstbeskattning" in the searchbar
     Then there should be 1 results
     And the first result should be "realisationsvinstbeskattning"
-    And the result should not change from "realisationsvinstbeskattning"
+    And the input word should not change from "realisationsvinstbeskattning"

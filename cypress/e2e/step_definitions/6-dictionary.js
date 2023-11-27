@@ -12,7 +12,7 @@ Then('the first result should be {string}', (text) => {
   cy.get('.result>div>span').first().should('have.text', text);
 });
 
-Then('the result should not change from {string}', (text) => {
+Then('the input word should not change from {string}', (text) => {
   cy.get('input[name="searchWord"]', { timeout: 10 }).should('have.value', text);
 });
 
