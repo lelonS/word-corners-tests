@@ -1,4 +1,4 @@
-Feature: rename later
+Feature: Box behavior after timeout
 
   Background: Use two-letter-combos as dictionary
     Given the dictionary requests are intercepted and use two-letter-words.txt
@@ -12,5 +12,3 @@ Feature: rename later
     And I claim points in the box that is "invalid-by-timeout"
     And I click on "unlock"
     Then there should be no "invalid" boxes
-
-# Scenario: Unlock green box that is invalid by timeout
