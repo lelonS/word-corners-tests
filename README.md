@@ -97,3 +97,5 @@ For example:
 * We don't test that you can't place letters in a box that is locked. 
 * We don't test that timeout always locks an unlocked box. 
 * We don't test the application on different devices/browsers.
+
+For HIVAT we could have clicked random boxes and collected data about the game. We could have used this data to find bugs and improve the game.
