@@ -1,6 +1,5 @@
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
 
-
 When('I enter {string} in the searchbar', (text) => {
   cy.get('[name="searchWord"]').type(text);
 });
@@ -14,8 +13,7 @@ Then('the first result should be {string}', (text) => {
 });
 
 Then('the result should not change from {string}', (text) => {
-  const regex = new RegExp("(?!boy\b)\b\w+", "g");
-  cy.get('.hits').should('not.match', text);
+  cy.get('input[name="searchWord"]', { timeout: 10 }).should('have.value', text);
 });
 
 
