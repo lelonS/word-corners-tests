@@ -52,7 +52,7 @@ We're testing we can claim points by placing two letters in the top-left box and
 
 We also test that we can unlock a locked box (due to wrong word) when we claim points. We do this by placing two letters in the top-left box and placing three letters in the top-right box. We then click the claim points button in the top-left box and the unlock button in the top-right box. We then check that there are no invalid boxes left. We check that the three letter word that was invalid is now valid (should turn into a two letter word).
 
-**Note:** When we unlock a box with hint we expect the word to become a two letter valid word. Due to a bug in the application, the word is not counted as valid and can never be claimed.
+**Note:** *When we unlock a box with hint we expect the word to become a two letter valid word. Due to a bug in the application, the word is not counted as valid and can never be claimed.*
 
 We finally test that we can unlock a locked box (due to timeout) when we claim points. We do this by placing two letters in the top-left box and waiting for the timeout. We then click the claim points button in the top-left box and the unlock button in the top-right box. We then check that there are no invalid boxes left.
 
@@ -64,14 +64,26 @@ We're testing that a green box (valid word) can turn invalid (by timeout) and st
 
 ### Dictionary
 
-lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+**Note:** *The full dictionary is so large that the test sometimes fail due to timeout.*
 
+We're testing that the dictionary is working as expected. We test this both with our custom word list and the default word list. 
 
+We go to the dictionary page, enter a word in the search bar and check that the result is correct. We also check that the input is still the word we typed. We found a problem with the application where if you type too fast, the input field is not updated correctly. This only happens when using the full dictionary. 
 
+We don't test this in the most optimal way. We simply use a small timeout to find the expected text in the input field. Which could pass if unlucky as the input field could be updated with the expected text before the timeout. 
 
+## Difficulties in testing randomness
 
-## Difficulties
+It's hard to test elements that are random because we can't know what the expected result is before running the application. It depends on the information we gather at runtime. 
+
+The difficulties specifically for Word-Corners is that it's hard to play a word that is valid since the letters you get are random. We solved this by using a custom dictionary where all two-letter combinations are valid words. 
+
+It is especially difficult to gather data from elements as you need to use `.then()` to get the data and need to use recursive functions to loop. We did not manage to find a better solution. That is one of the reasons we replaced the dictionary with a custom one to make it predictable when a word is valid or not. 
+
+Before we came up with the solution of using a custom dictionary, we came up with the solution of monkey patching the `randomChar` function. We ultimately decided to use the custom dictionary as it made the loading time of the application much faster and was more simple to implement. You can see our monkey patching solution in the `mpatch` branch in the file `cypress/e2e/step_definitions/1-letter-placement.js`. Note that the code is not up to date with the current code in the main branch.
 
 ## Test coverage
+
+
 
 ## Test ideas
