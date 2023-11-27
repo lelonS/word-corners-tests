@@ -82,8 +82,18 @@ It is especially difficult to gather data from elements as you need to use `.the
 
 Before we came up with the solution of using a custom dictionary, we came up with the solution of monkey patching the `randomChar` function. We ultimately decided to use the custom dictionary as it made the loading time of the application much faster and was more simple to implement. You can see our monkey patching solution in the `mpatch` branch in the file `cypress/e2e/step_definitions/1-letter-placement.js`. Note that the code is not up to date with the current code in the main branch.
 
-## Test coverage
+## Test coverage & Test ideas
 
+We have decent test coverage. We test the main features such as navigation, letter placement, game over buttons, claiming points and dictionary search. 
 
+We're missing different timeout scenarios. 
 
-## Test ideas
+For example: 
+* Claiming points after the game is over due to timeout. 
+* When a box has a valid word but is locked by timeout, and you get the ability to unlock the box (by claiming a different box), the unlock button may cover the claim points button. 
+* We don't test that you get more points for longer words.
+* We don't test that you can lose by timeout. 
+* We don't test every combination of letters in the dictionary. 
+* We don't test that you can't place letters in a box that is locked. 
+* We don't test that timeout always locks an unlocked box. 
+* We don't test the application on different devices/browsers.
