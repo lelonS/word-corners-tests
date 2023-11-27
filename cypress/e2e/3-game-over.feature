@@ -1,4 +1,4 @@
-Feature: Play again button starts a correct game
+Feature: Game over buttons
 
   Background: Use two-letter-combos as dictionary
     Given the dictionary requests are intercepted and use two-letter-words.txt
