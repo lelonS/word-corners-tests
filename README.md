@@ -89,8 +89,8 @@ We have decent test coverage. We test the main features such as navigation, lett
 We're missing different timeout scenarios. 
 
 For example: 
-* Claiming points after the game is over due to timeout. 
-* When a box has a valid word but is locked by timeout, and you get the ability to unlock the box (by claiming a different box), the unlock button may cover the claim points button. 
+* We don't test claiming points after the game is over due to timeout. 
+* We don't test when a box has a valid word but is locked by timeout, and you get the ability to unlock the box (by claiming a different box), the unlock button may cover the claim points button. 
 * We don't test that you get more points for longer words.
 * We don't test that you can lose by timeout. 
 * We don't test every combination of letters in the dictionary. 
